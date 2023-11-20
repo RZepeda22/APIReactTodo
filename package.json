@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-rest-api-sqlite",
+  "version": "1.0.0",
+  "description": "POC - NodeJS REST API using SQLite as a database.",
+  "author": "",
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "*",
+    "express": "*",
+    "sqlite": "*",
+    "bluebird": "*"
+  },
+  "license": "LGPL-3.0",
+  "bugs": {
+    
+  },
+  "repository": ""
+}
