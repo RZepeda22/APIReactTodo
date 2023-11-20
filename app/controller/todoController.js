@@ -30,6 +30,32 @@ class TodoController {
     };
 
     /**
+     * Tries to find an entity using its Id / Primary Key
+     * @params req, res
+     * @return entity
+     */
+    findByEmail(req, res) {
+        let email = req.params.identificador;
+        this.todoDao.findByEmail(email)
+            .then(this.common.findSuccess(res))
+            .catch(this.common.findError(res));
+    };
+
+    /**
+     * Tries to find an entity using its Id / Primary Key
+     * @params req, res
+     * @return entity
+     */
+    findByUsername(req, res) {
+        let username = req.params.identificador;
+        this.todoDao.findByUsername(username)
+            .then(this.common.findSuccess(res))
+            .catch(this.common.findError(res));
+    };
+
+
+
+    /**
      * Finds all entities.
      * @return all entities
      */

@@ -21,6 +21,12 @@ router.get('/:code', function (req, res) {
     userController.findById(req, res);
 });
 
+router.get('/identificador', function (req, res) {
+    userController.findByIdentificador(req, res);
+});
+
+
+
 router.get('/', function (req, res) {
     userController.findAll(res);
 });

@@ -30,6 +30,31 @@ class UserController {
             .catch(this.common.findError(res));
     };
 
+        /**
+     * Tries to find an entity using its Id / Primary Key
+     * @params req, res
+     * @return entity
+     */
+        findByIdentificador(req, res) {
+            let identificador = req.body.identificador;
+            if (identificador.includes("@")) {
+                this.userDao.findByEmail(identificador)
+                .then(this.common.findSuccess(res))
+                .catch(this.common.findError(res));
+             }
+             else {
+                this.userDao.findByUsername(identificador)
+                .then(this.common.findSuccess(res))
+                .catch(this.common.findError(res));
+             }
+            
+        };
+
+     
+
+
+
+
     /**
      * Finds all entities.
      * @return all entities

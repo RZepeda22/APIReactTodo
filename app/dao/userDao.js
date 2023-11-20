@@ -26,6 +26,31 @@ class UserDao {
     };
 
     /**
+     * Tries to find an entity using its Id / Primary Key
+     * @params id
+     * @return entity
+     */
+    findByEmail(email) {
+        let sqlRequest = "SELECT code, username, email, password, nombre, apellido,telefono,role,active FROM user WHERE email=$email";
+        let sqlParams = {$email: email};
+        return this.common.findOne(sqlRequest, sqlParams).then(row =>
+            new User(row.code, row.username, row.email, row.password, row.nombre, row.apellido, row.telefono, row.role, row.active));
+    };
+
+    /**
+     * Tries to find an entity using its Id / Primary Key
+     * @params id
+     * @return entity
+     */
+    findByUsername(username) {
+        let sqlRequest = "SELECT code, username, email, password, nombre, apellido,telefono,role,active FROM user WHERE username=$username";
+        let sqlParams = {$username: username};
+        return this.common.findOne(sqlRequest, sqlParams).then(row =>
+            new User(row.code, row.username, row.email, row.password, row.nombre, row.apellido, row.telefono, row.role, row.active));
+    };    
+
+
+    /**
      * Finds all entities.
      * @return all entities
      */
