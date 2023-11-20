@@ -16,4 +16,4 @@ class User {
     }
 }
 
-module.exports = Car;
+module.exports = User;

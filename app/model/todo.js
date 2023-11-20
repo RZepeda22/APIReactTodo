@@ -11,4 +11,4 @@ class Todo {
     }
 }
 
-module.exports = Driver;
+module.exports = Todo;
